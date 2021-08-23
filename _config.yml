@@ -21,7 +21,7 @@
 title: Alexandre Lavoie
 email: alexandre.lavoie00@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A little blog/portfolio for myself. This includes development, cybersecurity, and anything else Computer Science related that I find interesting.  
+  A little blog/portfolio. This includes development, cybersecurity, and anything else Computer Science related that I find interesting.  
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://alexandre-lavoie.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  alexandre-lavoie
