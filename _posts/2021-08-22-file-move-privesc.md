@@ -89,8 +89,11 @@ For this example, we targeted `/tmp` but we could easily target `/etc` or even o
 Therefore, we can get Root Arbitrary File Write + Root PrivEsc through:
 
 1) Making a malicious `/pwn/chrony.conf` folder and moving it with `script.sh`.
+
 2) Making a symlink to a target destination and moving it with `script.sh`.
+
 3) Making a payload with the target file name and moving it with `script.sh`.
+
 4) Profit.
 
 This resulting payload is roughly following:
