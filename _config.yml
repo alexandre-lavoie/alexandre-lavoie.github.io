@@ -24,17 +24,23 @@ description: >- # this means to ignore newlines until "baseurl:"
   A little blog/portfolio. This includes development, cybersecurity, and anything else Computer Science related that I find interesting.  
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://alexandre-lavoie.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  alexandre-lavoie
-linkedin_username: alexandre-lavoie-00
 
 # Build settings
-theme: minima
+show_excerpts: true
+excerpt_separator: <!--more-->
+remote_theme: jekyll/minima
 plugins:
+  - jekyll-remote-theme
+  - jemoji
+  - jekyll-seo-tag
   - jekyll-feed
 
-# Minima settings
 minima:
   skin: dark
+
+  social_links:
+    github:  alexandre-lavoie
+    linkedin: alexandre-lavoie-00
 
 # Exclude from processing.
 # The following items will not be processed, by default.
