@@ -28,7 +28,7 @@ jobs:
                   node-version: "16.x"
                   registry-url: "https://registry.npmjs.org"
             - run: bun install
-            - run: bun build
+            - run: bun run build
             - uses: actions/upload-artifact@v3
               with:
                   name: build-website
