@@ -1,7 +1,0 @@
-/.next
-/out
-/public
-node_modules
-/package.lock
-/bun.lockb
-/pnpm-lock.yaml
